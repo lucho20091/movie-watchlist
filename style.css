@@ -211,9 +211,6 @@ main > .content {
   }
 
   @media (max-width: 767px){
-    body{
-        height: 100%;
-    }
     header, main, .space{
         width: 100%;
     }
