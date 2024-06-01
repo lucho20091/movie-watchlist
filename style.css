@@ -220,8 +220,11 @@ main > .content {
     header{
         height: 30vh;
     }
+    .space{
+        height: 2vh;
+    }
     main {
-        height: 66vh;
+        height: 68vh;
     }
     .flex > h1{
         font-size: 1rem;
