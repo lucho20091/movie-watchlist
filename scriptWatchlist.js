@@ -3,8 +3,6 @@ const main = document.querySelector('main')
 const movies = JSON.parse(localStorage.getItem('movies'))
 const moviesId = JSON.parse(localStorage.getItem('moviesId'))
 
-console.log(main)
-console.log(movies)
 let html = ''
 for (let item of movies){
     fetch(`http://www.omdbapi.com/?apikey=${apiKey}&t=${item}`)
@@ -39,12 +37,10 @@ setTimeout(()=> {
 }, 500)}
 
 document.addEventListener('click', (e)=> {
-    console.log(e.target.id)
     if (moviesId.includes(e.target.id)){
         const index = movies.indexOf(e.target.id)
         movies.splice(index, 1)
         moviesId.splice(index, 1)
-        console.log(movies)
         localStorage.setItem('movies', JSON.stringify(movies))
         localStorage.setItem('moviesId', JSON.stringify(moviesId))
         window.location.reload()

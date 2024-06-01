@@ -17,7 +17,6 @@ formSearch.addEventListener('submit', (e) => {
     fetch(url)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         pushData(data.Search, arrMovies, movieId)
         fetchData(arrMovies)
         setTimeout(renderData, 1000)
@@ -64,7 +63,6 @@ const fetchData = (arr) => {
     }
 }
 
-
 const renderData = () => {
     main.innerHTML = html
 }
@@ -72,19 +70,15 @@ const renderData = () => {
 const addToWatchlist = (index) => {
     MyWatchlist.push(arrMovies[index])
     myWatchlistId.push(movieId[index])
-    console.log(myWatchlistId)
     localStorage.setItem('movies', JSON.stringify(MyWatchlist))
     localStorage.setItem('moviesId', JSON.stringify(myWatchlistId))
 }
-
-
 
 document.addEventListener('click', (e) => {
     if (movieId.includes(e.target.id)){
         const index = movieId.indexOf(e.target.id)
         document.getElementById(`${e.target.id}`).addEventListener('click', addToWatchlist(index))
     }
-  
 })
 
 
