@@ -218,15 +218,20 @@ main > .content {
         width: 100%;
     }
     header{
-        height: 30vh;
+        height: 25vh;
     }
     .space{
-        height: 2vh;
+        height: 5vh;
+        border-bottom: 1px solid red;
     }
     main {
-        height: 68vh;
+        height: 69vh;
     }
     .flex > h1{
-        font-size: 1rem;
+        font-size: 1.6rem;
     }
+    .flex > a,
+    .flex3 > a {
+    font-size: 0.8rem;
+}
   }
