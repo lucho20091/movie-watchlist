@@ -211,24 +211,33 @@ main > .content {
   }
 
   @media (max-width: 767px){
+    body{ 
+        height: 100vh;
+        background-color: #121212;
+    }
     header, main, .space{
         width: 100%;
     }
     header{
-        height: 25vh;
+        height: 25%;
     }
     .space{
-        height: 5vh;
+        height: 5%;
         border-bottom: 1px solid red;
     }
     main {
-        height: 69vh;
+        height: 70%;
     }
     .flex > h1{
         font-size: 1.6rem;
     }
     .flex > a,
     .flex3 > a {
-    font-size: 0.8rem;
-}
+        font-size: 0.8rem;
+    }
+    .gray-v2 > h2{
+        font-size: 2rem;
+        text-align: center;
+        max-width: 70%;
+    }
   }
