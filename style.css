@@ -1,0 +1,220 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    color: #FFF;
+}
+/* header */
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    gap: 3em;
+    margin: 0 auto;
+    width: 550px;
+    height: 208px;
+    background: linear-gradient(rgba(12, 23, 19, 0.8), rgba(12, 23, 19, 0.2)), url('./assets/header.png');
+    background-position: 20% 30%;
+    background-size: cover;
+}
+header:hover{
+    background: linear-gradient(rgba(12, 23, 19, 0.2), rgba(12, 23, 19, 0)), url('./assets/header.png');
+    background-position: 20% 30%;
+    background-size: cover;
+}
+header > .flex{
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 5px black;
+}
+header > .flex:nth-child(1){
+    justify-content: space-around;
+}
+.flex > h1{
+    user-select: none;
+}
+.flex > a,
+.flex3 > a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2rem;
+    user-select: none;
+}
+header > form {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    justify-content: center;
+}
+form > input {
+    padding: 9px 13px;
+    height: 38px;
+    width: 342px;
+    background: #2E2E2F;
+    color: #A5A5A5;
+    font-weight: 500;
+    border: none;
+    color: inherit;
+}
+form > input:focus{
+    outline: none;
+}
+form > button {
+    height: 38px;
+    width: 120px;
+    font-weight: 500;
+    background: #4B4B4B;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+}
+form > button:hover,
+form > button:focus {
+    background: #FFF;
+    color: #0C1713;
+}
+/* Main */
+main{
+    width: 550px;
+    height: 541px;
+    background: #121212;
+    margin: 0 auto;
+    overflow: auto;
+}
+main > .space {
+    height: 20px;
+    width: 100%;
+}
+main > .gray {
+    color: #2E2E2F;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: myAnim 3s ease 0s 1 normal forwards;
+
+}
+.gray > h2,
+.gray > h3 {
+    margin: 0;
+}
+.gray > h2 {
+    font-size: 5rem;
+}
+.gray > h3{
+    font-size: 2rem;
+}
+main > .gray-v2 {
+    color: #2E2E2F;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+.gray-v2 > h3 > a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1.3rem;
+}
+/* Main Content */
+main > .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    padding: 1.2em 0;
+    gap: 1em;
+    margin:  auto;
+    border-bottom: 1px solid white;
+}
+
+.content > img {
+    width: 100px;
+    height: 148px;
+}
+.text > .flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.text > .flex2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.text > .flex3 {
+    display: flex;
+    height: 30px;
+    justify-content: end;
+    align-items: center;
+    margin-right: 0.4em;
+    width: auto;
+}
+.text > .flex3 > a:hover,
+.text > .flex3> a:focus{
+    background: #FFF;
+    padding: 0.2em 0.4em;
+    border-radius: 10px;
+    color: #2E2E2F;
+}
+.flex > h2,
+.flex > p {
+    margin: 0;
+}
+.flex > h2 {
+    max-width: 80%;
+}
+.content > .text > .flex > .star{
+    position: absolute;
+    top: 8%;
+    right: 0;
+    color: yellow;
+}
+@keyframes myAnim {
+    0% {
+        color: #2E2E2F
+    }
+    100% {
+        color: #FFF;
+    }
+}
+.hidden {
+    display: none !important;
+}
+.space {
+    margin: 0 auto;
+    width: 550px;
+    height: 30px;
+    background: #121212;
+}
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #121212; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
