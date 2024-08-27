@@ -1,7 +1,11 @@
 *, *::before, *::after{
     box-sizing: border-box;
 }
-
+html{
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
 body{
     margin: 0;
     color: #FFF;
@@ -136,18 +140,22 @@ main > .content {
     width: 100px;
     height: 148px;
 }
+.text{
+    width: 100%;
+
+}
 .text > .flex {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
 }
 .text > .flex2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 .text > .flex3 {
     display: flex;
@@ -159,6 +167,7 @@ main > .content {
 }
 .text > .flex3 > a:hover,
 .text > .flex3> a:focus{
+    cursor: pointer;;
     background: #FFF;
     padding: 0.2em 0.4em;
     border-radius: 10px;
@@ -212,7 +221,8 @@ main > .content {
 
   @media (max-width: 767px){
     body{ 
-        height: 100vh;
+        width: 100%;
+        height: 100dvh;
         background-color: #121212;
     }
     header, main, .space{

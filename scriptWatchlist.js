@@ -1,48 +1,51 @@
-const apiKey = '46e87513'
 const main = document.querySelector('main')
-const movies = JSON.parse(localStorage.getItem('movies'))
-const moviesId = JSON.parse(localStorage.getItem('moviesId'))
+let watchList = JSON.parse(localStorage.getItem('watchlist')) || []
+let watchListObjects = JSON.parse(localStorage.getItem('watchlistObject')) || []
 
-let html = ''
-for (let item of movies){
-    fetch(`http://www.omdbapi.com/?apikey=${apiKey}&t=${item}`)
-        .then(res => res.json())
-        .then(data => {
-            html += `    
+if (watchList.length > 0){
+    main.innerHTML = renderHTML()
+}
+
+function renderHTML() {
+    let html = ''
+    for (let item of watchListObjects){
+        html += `
                 <div class="content">
-                    <img src="${data.Poster}" alt="">
+                    <img src="${item.Poster}" alt="">
                     <div class="text">
                         <div class="flex">
-                            <h2>${data.Title}</h2>
-                            <p class="star"><i class="fa-solid fa-star"></i> ${data.imdbRating}</p>
+                            <h2>${item.Title}</h2>
+                            <p class="star"><i class="fa-solid fa-star"></i> ${item.imdbRating}</p>
                         </div>
                         <div class="flex2">
-                            <p>${data.Runtime}</p>
-                            <p>${data.Genre}</p>
+                            <p>${item.Runtime}</p>
+                            <p>${item.Genre}</p>
                         </div>
                         <div class="flex3">
-                            <a href="#" id=${data.imdbID}>Remove</a>
+                            <a href="#" id=${item.imdbID}>Remove</a>
                         </div>
                         <div>
-                            <p>${data.Plot.substring(0,100).trim()}...</p>
+                            <p>${item.Plot.substring(0,100).trim()}...</p>
                         </div>
                     </div>
                 </div>`
-        })
+
+    }
+    return html
 }
 
-if (movies.length > 0) {
-setTimeout(()=> {
-    main.innerHTML = html
-}, 500)}
+function removeMovie(){
 
-document.addEventListener('click', (e)=> {
-    if (moviesId.includes(e.target.id)){
-        const index = movies.indexOf(e.target.id)
-        movies.splice(index, 1)
-        moviesId.splice(index, 1)
-        localStorage.setItem('movies', JSON.stringify(movies))
-        localStorage.setItem('moviesId', JSON.stringify(moviesId))
-        window.location.reload()
-    }
+}
+
+document.addEventListener('click', (e) => {
+    watchListObjects.map((item, index) => {
+        if (e.target.id === item.imdbID){
+            watchList.splice(index, 1)
+            watchListObjects.splice(index, 1)
+            localStorage.setItem('watchlist', JSON.stringify(watchList))
+            localStorage.setItem('watchlistObject', JSON.stringify(watchListObjects))
+            window.location.reload()
+        }
+    })
 })
