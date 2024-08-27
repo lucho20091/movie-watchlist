@@ -5,7 +5,7 @@ const searchInput = document.querySelector('#search-input')
 const formSearch = document.querySelector('#form-search')
 
 let arrMovies = []
-let MyWatchlist = []
+let MyWatchlist = JSON.parse(localStorage.getItem('movies')) || []
 let movieId = []
 let myWatchlistId = []
 
